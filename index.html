@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leonardo S. Ladia | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 1px;
+    }
+    header h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #38bdf8;
+      margin-top: 10px;
+    }
+    header h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #9ca3af;
+      margin-top: 5px;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      padding: 10px 20px;
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end;
+      font-size: 0.9rem;
+    }
+    nav a {
+      color: #9ca3af;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
+    .sub {
+      color: #9ca3af;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .project {
+      border: 1px solid #1f2937;
+      padding: 15px 18px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+    .project-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #e5e7eb;
+    }
+    .project-tags {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-bottom: 6px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 10px 40px;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+    a.link {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    a.link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Leonardo S. Ladia</h1>
+    <h2>Web Developer | UI/UX Enthusiast</h2>
+    <h3>Matimbo, Malolos, Bulacan · (+63) 976-300-5732 · <a class="link" href="mailto:lenardladia4@gmail.com">lenardladia4@gmail.com</a></h3>
+  </header>
+
+  <section id="about">
+    <h3>Career Objective</h3>
+    <p>
+      A motivated 4th-year Bachelor of Science in Information Technology student with a specialization in Mobile and
+      Web Application Development and Database Management. Passionate about applying creative solutions and
+      technical skills to real-world challenges. Enjoys working in collaborative environments and is eager to explore
+      emerging technologies to foster continuous learning and innovation.
+    </p>
+  </section>
+
+  <section id="education">
+    <h3>Education</h3>
+    <p class="sub">Academic background and current program.</p>
+    <p><strong>National University - Baliwag</strong><br>
+    Bachelor of Science in Information Technology (BSIT) – Specialization in Mobile and Web Application<br>
+    <em>Expected Graduation: 2026</em></p><br>
+    <p><strong>Marcelo H. Del Pilar National High School</strong><br>
+    Academic Strand: Science, Technology, Engineering, and Mathematics (STEM)<br>
+    <em>Graduated 2021</em></p>
+  </section>
+
+  <section id="skills">
+    <h3>Skills</h3>
+    <p><strong>Front-End:</strong> HTML, CSS, JavaScript, React<br>
+       <strong>Back-End:</strong> Firebase, MySQL, PHP<br>
+       <strong>Tools:</strong> Canva, Flutterflow<br>
+       <strong>Soft Skills:</strong> Teamwork, Adaptability, Time Management, Problem-Solving
+    </p>
+  </section>
+
+  <section id="projects">
+    <h3>Academic Projects / Research</h3>
+
+    <div class="project">
+      <div class="project-title">Tomb Navigation and Contract Management in Baliwag Municipal Cemetery Mobile Application</div>
+      <div class="project-tags">Flutter · Firebase · Google Gemini AI</div>
+      <p>Developed a Flutter-based mobile app for cemetery navigation and contract management, integrating Firebase for real-time data and an AI chatbot. Included PDF export and a 360° map navigation similar to Google Street View for user accessibility.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-title">Fabio’s Barber Shop Booking System</div>
+      <div class="project-tags">Full Stack Web App · MySQL · PHP</div>
+      <p>Built a full-stack web-based booking system with modules for users, staff, and admin. Integrated appointment scheduling, barber selection, and business reports for daily operations monitoring.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Email: <a class="link" href="mailto:lenardladia4@gmail.com">lenardladia4@gmail.com</a></p>
+    <p>GitHub: <a class="link" href="https://github.com/YOURUSERNAME" target="_blank">github.com/YOURUSERNAME</a></p>
+    <p>LinkedIn: <a class="link" href="https://linkedin.com/in/YOURPROFILE" target="_blank">linkedin.com/in/YOURPROFILE</a></p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Leonardo S. Ladia. All rights reserved.
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
