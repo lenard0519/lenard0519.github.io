@@ -5,99 +5,182 @@
   <title>Leonardo S. Ladia | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    :root {
+      --bg: #020817;
+      --card: rgba(15,23,42,0.86);
+      --accent: #38bdf8;
+      --muted: #9ca3af;
+      --border: rgba(148,163,253,0.18);
+      --radius: 18px;
+      --transition: 0.25s ease;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0f172a;
+      background: radial-gradient(circle at top left, #111827 0, #020817 40%, #000 100%);
       color: #e5e7eb;
-      line-height: 1.6;
-    }
-    header {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
     }
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 1px;
-    }
-    header h2 {
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #38bdf8;
-      margin-top: 10px;
-    }
-    header h3 {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #9ca3af;
-      margin-top: 5px;
+    .wrapper {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 80px 18px 40px;
     }
     nav {
-      position: fixed;
+      position: sticky;
       top: 0;
-      width: 100%;
-      backdrop-filter: blur(10px);
-      padding: 10px 20px;
+      z-index: 20;
+      padding: 14px 18px;
+      backdrop-filter: blur(18px);
+      background: radial-gradient(circle at top, rgba(15,23,42,0.96), rgba(2,6,23,0.94));
       display: flex;
-      gap: 20px;
       justify-content: flex-end;
-      font-size: 0.9rem;
+      gap: 18px;
+      font-size: 0.85rem;
+      border-bottom: 1px solid rgba(148,163,253,0.12);
     }
     nav a {
-      color: #9ca3af;
+      color: var(--muted);
       text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: var(--transition);
     }
     nav a:hover {
-      color: #38bdf8;
+      color: var(--accent);
+      background: rgba(148,163,253,0.06);
     }
-    section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 20px;
+    header {
+      padding: 70px 0 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(230px, 1.8fr);
+      gap: 26px;
+      align-items: center;
     }
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: #38bdf8;
-    }
-    .sub {
-      color: #9ca3af;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
-    .project {
-      border: 1px solid #1f2937;
-      padding: 15px 18px;
-      border-radius: 10px;
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,253,0.4);
+      font-size: 0.7rem;
+      color: var(--muted);
       margin-bottom: 12px;
     }
-    .project-title {
+    .tag span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+    h1 {
+      font-size: 2.6rem;
       font-weight: 600;
-      margin-bottom: 4px;
+      letter-spacing: 0.04em;
+    }
+    h1 span {
+      background: linear-gradient(to right, #38bdf8, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    h2 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+    .subtitle {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 420px;
+    }
+    .info {
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .info a { color: var(--accent); text-decoration: none; }
+    .hero-card {
+      padding: 16px 16px 14px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(15,23,42,0.98), rgba(15,23,42,0.88));
+      display: grid;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      box-shadow: 0 18px 60px rgba(15,23,42,0.9);
+    }
+    .hero-label {
+      font-size: 0.7rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .hero-skill {
+      font-size: 0.8rem;
       color: #e5e7eb;
     }
-    .project-tags {
-      font-size: 0.75rem;
-      color: #9ca3af;
+    section {
+      margin-bottom: 40px;
+    }
+    section h3 {
+      font-size: 1.2rem;
       margin-bottom: 6px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .card {
+      border-radius: var(--radius);
+      padding: 16px 16px 14px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 16px 40px rgba(15,23,42,0.9);
+    }
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: #e5e7eb;
+    }
+    .card-tags {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 4px;
     }
     footer {
       text-align: center;
-      padding: 30px 10px 40px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #6b7280;
+      padding: 16px 0 8px;
     }
     a.link {
-      color: #38bdf8;
+      color: var(--accent);
       text-decoration: none;
     }
     a.link:hover {
       text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      header {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+      }
+      h1 { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -110,70 +193,109 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <header>
-    <h1>Leonardo S. Ladia</h1>
-    <h2>Web Developer | UI/UX Enthusiast</h2>
-    <h3>Matimbo, Malolos, Bulacan · (+63) 976-300-5732 · <a class="link" href="mailto:lenardladia4@gmail.com">lenardladia4@gmail.com</a></h3>
-  </header>
+  <div class="wrapper">
+    <header>
+      <div>
+        <div class="tag"><span></span> Open to internship & part-time roles</div>
+        <h1><span>Leonardo</span> S. Ladia</h1>
+        <h2>Web Developer | UI/UX Enthusiast</h2>
+        <p class="subtitle">
+          A motivated 4th-year BSIT student specialising in Mobile & Web Application Development and Database Management.
+          Focused on building useful, user-centered solutions with clean, reliable code.
+        </p>
+        <p class="info">
+          Matimbo, Malolos, Bulacan · (+63) 976-300-5732 ·
+          <a href="mailto:lenardladia4@gmail.com">lenardladia4@gmail.com</a>
+        </p>
+      </div>
+      <div class="hero-card">
+        <div>
+          <div class="hero-label">Core Stack</div>
+          <div class="hero-skill">HTML · CSS · JavaScript · React · PHP · MySQL · Firebase</div>
+        </div>
+        <div>
+          <div class="hero-label">Tools</div>
+          <div class="hero-skill">Canva · Flutterflow</div>
+        </div>
+        <div>
+          <div class="hero-label">Strengths</div>
+          <div class="hero-skill">UI-focused · Detail-oriented · Team player · Problem solver</div>
+        </div>
+      </div>
+    </header>
 
-  <section id="about">
-    <h3>Career Objective</h3>
-    <p>
-      A motivated 4th-year Bachelor of Science in Information Technology student with a specialization in Mobile and
-      Web Application Development and Database Management. Passionate about applying creative solutions and
-      technical skills to real-world challenges. Enjoys working in collaborative environments and is eager to explore
-      emerging technologies to foster continuous learning and innovation.
-    </p>
-  </section>
+    <section id="about">
+      <h3>About</h3>
+      <p class="sub">Short, clear, employer-friendly summary.</p>
+      <div class="card">
+        <p>
+          A motivated BSIT student passionate about mobile and web development, database management,
+          and intuitive interfaces. Enjoys collaborating with teams, learning modern tools, and turning
+          real-world problems into simple, usable digital products.
+        </p>
+      </div>
+    </section>
 
-  <section id="education">
-    <h3>Education</h3>
-    <p class="sub">Academic background and current program.</p>
-    <p><strong>National University - Baliwag</strong><br>
-    Bachelor of Science in Information Technology (BSIT) – Specialization in Mobile and Web Application<br>
-    <em>Expected Graduation: 2026</em></p><br>
-    <p><strong>Marcelo H. Del Pilar National High School</strong><br>
-    Academic Strand: Science, Technology, Engineering, and Mathematics (STEM)<br>
-    <em>Graduated 2021</em></p>
-  </section>
+    <section id="education">
+      <h3>Education</h3>
+      <div class="card">
+        <div class="card-title">National University – Baliwag</div>
+        <div class="card-tags">BSIT · Specialisation in Mobile & Web Application · Expected 2026</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Marcelo H. Del Pilar National High School</div>
+        <div class="card-tags">STEM Strand · Graduated 2021</div>
+      </div>
+    </section>
 
-  <section id="skills">
-    <h3>Skills</h3>
-    <p><strong>Front-End:</strong> HTML, CSS, JavaScript, React<br>
-       <strong>Back-End:</strong> Firebase, MySQL, PHP<br>
-       <strong>Tools:</strong> Canva, Flutterflow<br>
-       <strong>Soft Skills:</strong> Teamwork, Adaptability, Time Management, Problem-Solving
-    </p>
-  </section>
+    <section id="skills">
+      <h3>Skills</h3>
+      <p class="sub">What you actually use in projects.</p>
+      <div class="card">
+        <p><strong>Front-End:</strong> HTML, CSS, JavaScript, React</p>
+        <p><strong>Back-End:</strong> Firebase, MySQL, PHP</p>
+        <p><strong>Tools:</strong> Canva, Flutterflow</p>
+        <p><strong>Soft Skills:</strong> Teamwork, Adaptability, Time Management, Problem-Solving</p>
+      </div>
+    </section>
 
-  <section id="projects">
-    <h3>Academic Projects / Research</h3>
+    <section id="projects">
+      <h3>Projects</h3>
+      <p class="sub">Highlight your best work. Short and impact-based.</p>
+      <div class="card">
+        <div class="card-title">Tomb Navigation & Contract Management App</div>
+        <div class="card-tags">Flutter · Firebase · AI Chatbot</div>
+        <p>
+          Mobile app for cemetery navigation and contract management with real-time data, AI-powered support,
+          PDF export, and a 360° map experience for easier guidance.
+        </p>
+      </div>
+      <div class="card">
+        <div class="card-title">Fabio’s Barber Shop Booking System</div>
+        <div class="card-tags">PHP · MySQL · Web App</div>
+        <p>
+          Full booking platform with user, staff, and admin roles, appointment scheduling, barber selection,
+          and business reports for daily operations.
+        </p>
+      </div>
+    </section>
 
-    <div class="project">
-      <div class="project-title">Tomb Navigation and Contract Management in Baliwag Municipal Cemetery Mobile Application</div>
-      <div class="project-tags">Flutter · Firebase · Google Gemini AI</div>
-      <p>Developed a Flutter-based mobile app for cemetery navigation and contract management, integrating Firebase for real-time data and an AI chatbot. Included PDF export and a 360° map navigation similar to Google Street View for user accessibility.</p>
-    </div>
+    <section id="contact">
+      <h3>Contact</h3>
+      <div class="card">
+        <p>Email: <a class="link" href="mailto:lenardladia4@gmail.com">lenardladia4@gmail.com</a></p>
+        <p>GitHub: <a class="link" href="https://github.com/lenard0519" target="_blank">github.com/lenard0519</a></p>
+        <p>LinkedIn: <a class="link" href="https://www.linkedin.com/in/Inrdladia" target="_blank">linkedin.com/in/Inrdladia</a></p>
+      </div>
+    </section>
 
-    <div class="project">
-      <div class="project-title">Fabio’s Barber Shop Booking System</div>
-      <div class="project-tags">Full Stack Web App · MySQL · PHP</div>
-      <p>Built a full-stack web-based booking system with modules for users, staff, and admin. Integrated appointment scheduling, barber selection, and business reports for daily operations monitoring.</p>
-    </div>
-  </section>
+    <footer>
+      © <span id="year"></span> Leonardo S. Ladia. All rights reserved.
+    </footer>
+  </div>
 
-  <section id="contact">
-    <h3>Contact</h3>
-    <p>Email: <a class="link" href="mailto:lenardladia4@gmail.com">lenardladia4@gmail.com</a></p>
-    <p>GitHub: <a class="link" href="https://github.com/lenard0519" target="_blank">github.com/lenard0519</a></p>
-    <p>LinkedIn: <a class="link" href="https://linkedin.com/in/YOURPROFILE" target="_blank">linkedin.com/in/YOURPROFILE</a></p>
-  </section>
-
-  <footer>
-    © <span id="year"></span> Leonardo S. Ladia. All rights reserved.
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
